@@ -1,0 +1,88 @@
+<div class="sidebar">
+    <div class="main_menu d-flex" [ngClass]="{'open' : !menuCollapse, 'collapsed': menuCollapse}">
+        <div class="pl-0" [ngClass]="{'main_menu_open' : !menuCollapse, 'main_menu_collapsed': menuCollapse}">
+            <img (click)="menuCollapse = !menuCollapse" class="menu_icon" src="./assets/svgs/icons/menu.svg"
+                alt="menu" />
+            <div (click)="routeToPage('voyages')" class="each_menu" [ngClass]="{'active': activeMenu === 'voyages'}">
+                <img class="icon_size" src="./assets/svgs/icons/voyages.svg" alt="voyages" />
+                <ng-container *ngIf="!menuCollapse">
+                    Voyages
+                </ng-container>
+            </div>
+            <div (click)="routeToPage('vessels')" class="each_menu" [ngClass]="{'active': activeMenu === 'vessels'}">
+                <img class="icon_size" src="./assets/svgs/icons/vessels.svg" alt="vessels" />
+                <ng-container *ngIf="!menuCollapse">
+                    Vessels
+                </ng-container>
+            </div>
+            <div (click)="routeToPage('crew')" class="each_menu" [ngClass]="{'active': activeMenu === 'crew'}">
+                <img class="icon_size" src="./assets/svgs/icons/crew.svg" alt="crew" />
+                <ng-container *ngIf="!menuCollapse">
+                    Crew
+                </ng-container>
+            </div>
+            <div (click)="routeToPage('ports')" class="each_menu" [ngClass]="{'active': activeMenu === 'ports'}">
+                <img class="icon_size" src="./assets/svgs/icons/ports.svg" alt="ports" />
+                <ng-container *ngIf="!menuCollapse">
+                    Ports
+                </ng-container>
+            </div>
+            <div (click)="routeToPage('stations')" class="each_menu" [ngClass]="{'active': activeMenu === 'stations'}">
+                <img class="icon_size" src="./assets/svgs/icons/stations.svg" alt="stations" />
+                <ng-container *ngIf="!menuCollapse">
+                    Stations
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="sub_menu">
+            <ng-container *ngIf="activeMenu === 'voyages'">
+                <app-list-menu [menuType]="activeMenu" (clickCardEmitter)="onCardClick($event)"></app-list-menu>
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'vessels'">
+                <app-list-menu [menuType]="activeMenu"></app-list-menu>
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'crew'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'ports'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'stations'">
+
+            </ng-container>
+        </div>
+        <div class="sub_menu" *ngIf="showMenuInfo">
+            <ng-container *ngIf="activeMenu === 'voyages'">
+                <app-menu-data (menuDataEmitter)="menuDataEmitter($event)"></app-menu-data>
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'vessels'">
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'crew'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'ports'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'stations'">
+
+            </ng-container>
+        </div>
+        <div class="sub_record" *ngIf="showMenuRecord">
+            <ng-container *ngIf="activeMenu === 'voyages'">
+                <app-menu-record (menuDataEmitter)="menuDataEmitter($event)"></app-menu-record>
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'vessels'">
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'crew'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'ports'">
+
+            </ng-container>
+            <ng-container *ngIf="activeMenu === 'stations'">
+
+            </ng-container>
+        </div>
+    </div>
+</div>

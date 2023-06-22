@@ -1,0 +1,180 @@
+
+
+/* You can add global styles to this file, and also import other style files */
+
+//============== External file imports ==============//
+@import "~ag-grid-community/styles//ag-grid.css";
+@import "~ag-grid-community/styles//ag-theme-alpine.css";
+@import "~ag-grid-community/styles//ag-theme-balham.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+//============== External file imports ==============//
+
+//============== SCSS Variables ==============//
+$font-regular: "Inter-Regular";
+$font-medium: "Inter-Medium";
+$font-semi-bold: "Inter-SemiBold";
+$font-bold: "Inter-Bold";
+
+$btnSecondaryColor : #222222 !important; // Buttun Secondary text 
+$btnSecondaryBrg : #63636633 !important; // Buttun Secondary text 
+$btnPrimaryBrg : #006CE2 !important; //button primary background  
+$btnPrimaryTextColor : #fff !important; 
+
+//============== Themes ==============//
+
+
+.btn-secondary {
+  background: $btnSecondaryBrg;
+  color: $btnSecondaryColor;
+  font-family: 'Inter-Medium';
+}
+
+.btn-primary {
+    background-color: $btnPrimaryBrg;
+    color: $btnPrimaryTextColor;
+    font-family: 'Inter-Medium';
+}
+//============== Global Style Classes ==============//
+@font-face {
+    font-family: $font-regular;
+    src: url("assets/fonts/inter/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: $font-medium;
+    src: url("assets/fonts/inter/Inter-Medium.ttf");
+}
+
+@font-face {
+    font-family: $font-bold;
+    src: url("assets/fonts/inter/Inter-Bold.ttf");
+}
+
+@font-face {
+    font-family: $font-semi-bold;
+    src: url("assets/fonts/inter/Inter-SemiBold.ttf");
+}
+
+.leaflet-tooltip{
+    padding: 0px !important;
+}
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background-color: #707070;
+    // background: linear-gradient(to right, #17AAD8 0%, #17AAD8 50%, #707070 50%, #707070 100%);
+  }
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url('assets/images/gps.svg');
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: url('assets/images/gps.svg');
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .op-7{
+    opacity: 0.7;
+  }
+  .menu-list{
+    .ng-select .ng-select-container {
+        // min-height: 20px !important;
+        border-radius: 7px !important;
+      }
+      
+      .ng-select.ng-select-single .ng-select-container {
+        // height: 20px !important;
+      }
+  }
+  .flag-img{
+    width: 2rem;
+  }
+
+  .legend {
+    line-height: 22px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 4rem !important;
+    margin-top: -7rem !important;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+}
+.loader{
+animation: pulse 2s linear infinite;
+}
+@keyframes pulse {
+  0%{stroke-opacity: 0;}
+  50%{stroke-opacity: 1;}
+  100%{
+    stroke-opacity: 0;
+  }
+}
+.right-align{
+  display: flex;
+  justify-content: flex-end;
+}
+.tooltip-div{
+  width:19rem;
+  background-color:#00000029;
+  padding:0.9rem;
+}
+.bb-1{
+  border-bottom: 1px solid #7070703C
+}
+.op-7{
+  opacity: 0.7;
+  
+}
+
+.right-flag{
+  margin-right: -10px;
+}
+.line{
+
+  margin-right: -5px;
+
+}
+.pointer {
+    cursor: pointer;
+}
+.menu-data{
+  button.accordion-button {
+    padding: 0.6rem;
+    font-weight: bold;
+    background-color: inherit;
+}
+.accordion-item{
+  background: none;
+}
+.accordion-button:focus, .accordion-button:active, .accordion-button:hover {
+    box-shadow: none !important;
+    --bs-accordion-active-color: black;
+}
+.accordion-button:not(.collapsed)::after{
+  --bs-accordion-btn-active-icon : var(--bs-accordion-btn-icon);
+}
+}

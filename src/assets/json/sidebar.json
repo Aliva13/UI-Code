@@ -1,0 +1,31 @@
+{
+    "sidebarData": {
+        "Menu": [
+          {
+            "name": "Voyages",
+            "route": "/app/dashboard",
+            "image": "fa fa-angle-double-right"
+          },
+          {
+            "name": "Vessels",
+            "route": "/app/vessels",
+            "image": "fa fa-ship"
+          },
+          {
+            "name": "Crew",
+            "route": "/crew",
+            "image": "fa fa-user"
+          },
+          {
+            "name": "Ports",
+            "route": "/ports",
+            "image": "fa fa-map-marker"
+          },
+          {
+            "name": "Stations",
+            "route": "/stations",
+            "image": "fa fa-soundcloud"
+          }
+        ]
+      }
+}

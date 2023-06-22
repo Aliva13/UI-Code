@@ -1,0 +1,61 @@
+<div class="row m-0 h-100" >
+    <ng-container *ngIf="!loader">
+        <div class="col-lg-8 p-l-0" id="loginImage">
+        </div>
+        <div class="col-lg-4 p-5 loginFormSpacing h-100">
+            <div class="col-md-12 pt-5 adnoc-logo">
+                <img class="icons" src="assets/images/southern-devall-logo.svg" alt="logo">
+            </div>
+            <div class="col-md-12">
+                <label class="info">Log in to Zulu</label>
+            </div>
+            <div class="fieldView col-md-12">
+                <form [formGroup]="loginForm" >
+                    <div class="form-group">
+                        <label class="required form-design">User ID</label>
+                        <input type="text" ucpWhiteSpaceRestrictor class="form-control" placeholder="Enter your User ID" id="loginUserID"
+                            [(ngModel)]="userDet.username" formControlName="username"
+                            [ngClass]="{ 'is-invalid': f['username'].dirty && f['username']['errors'] }">
+                        <div *ngIf="f['username']['errors'] && f['username'].dirty" class="invalid-feedback pt-1">
+                            <span *ngIf="f['username']['errors']['required']">
+                                User ID is required.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="required form-design">Pin</label>
+                        <input type="password" class="form-control" placeholder="Enter your Password" id="loginPassword"
+                            [(ngModel)]="userDet.pin" formControlName="pin"
+                            [ngClass]="{ 'is-invalid': f['pin'].dirty && f['pin']['errors'] }"
+                            autocomplete="off">
+                        <div *ngIf="f['pin']['errors'] && f['pin'].dirty"
+                            class="invalid-feedback d-block pt-1">
+                            <span *ngIf="f['pin']['errors']['required']">
+                                Pin is required.
+                            </span>
+                            <span *ngIf="f['pin']['errors']['minlength']">
+                                Password length must be atleast 4.
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary col-md-12" [disabled]="false"
+                        (click)="login()">
+                        Log In <span><em class="fa fa-spinner fa-spin"></em></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="loader">
+        <div>
+            <div id="loader-wrapper-submaincontent">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

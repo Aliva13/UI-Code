@@ -1,0 +1,70 @@
+<header class="app-header app-header-dark">
+  <div class="top-bar">
+    <div class="top-bar-brand w-50">
+      <img src="assets/images/southern-devall-logo.svg" alt="" class="header-logo">
+      <label class="mt-2 inter-medium header-title">Southern Devall</label>
+    </div>
+    <div class="top-bar-list">
+      <div class="top-bar-item px-2 d-md-none d-lg-none d-xl-none">
+        <button class="hamburger hamburger-squeeze" type="button" data-toggle="aside" aria-label="toggle menu"><span
+            class="hamburger-box"><span class="hamburger-inner"></span></span></button> <!-- /toggle menu -->
+      </div>
+      <div class="top-bar-item top-bar-item-right px-0">
+        <ul class="header-nav nav">
+          <li class="nav-item">
+            <span>
+              <span class="material-icons pointer" title="Light Theme" *ngIf="selectedTheme?.theme === 'dark-theme'"
+                (click)="switchTheme('default-skin')">
+                light_mode
+              </span>
+            </span>
+            <span class="material-icons pointer" title="Dark Theme" *ngIf="selectedTheme?.theme === 'default-skin'"
+              (click)="switchTheme('dark-theme')">
+              dark_mode
+            </span>
+          </li>
+          <li class="nav-item dropdown header-nav-dropdown">
+            <a class="nav-link px-1" href="javascript:void(0)" (click)="toggleFullscreen($event)">
+              <span class="material-icons" title="Full Screen" *ngIf="!fullScreenActive">
+                open_in_full
+              </span>
+              <span class="material-icons-outlined" *ngIf="fullScreenActive">
+                close_fullscreen
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="dropdown d-flex">
+          <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <span class="user-avatar user-avatar-md">
+              <img src='assets/images/profile.png' alt=""
+                >
+            </span>
+            <span class="account-summary pr-lg-4 d-none d-lg-block">
+              <span class="account-name">TestUser</span> 
+              <span class="account-description">Captain</span>
+            </span>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-arrow ml-3"></div>
+            <!-- <h6 class="dropdown-header d-none d-md-block d-lg-none"> {{storedUserDetails['full_name'] || ''}} </h6> -->
+            <a class="dropdown-item" href="javascript:void(0)" (click)="logOut()">
+              <span class="dropdown-icon oi oi-account-logout"></span> Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- <ng-container *ngIf="loading">
+  <div class="loader-wrapper-submaincontent">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-container> -->

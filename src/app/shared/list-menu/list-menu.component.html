@@ -1,0 +1,75 @@
+<div class="menu-list">
+    <div class="row">
+        <div class="col-6">
+            <h4 class="list-title">{{title}}</h4>
+        </div>
+        <div class="col-6 menu-logo pr-4">
+            <img src="assets/images/southern-devall-logo.svg" alt="logo">
+        </div>
+    </div>
+    <div class="row row-no-gutters pb-1 pt-2">
+        <div class="col-1">
+            <img class="icon_size mt-10px" src="./assets/svgs/icons/filter.svg" alt="filter" />
+        </div>
+        <div class="col-5">
+            <ng-select placeholder="Select Filter" bindLabel="label" bindValue="value" [items]="filterDropdownList"
+                [(ngModel)]="formData.filter" name="filterDD">
+            </ng-select>
+        </div>
+        <div class="col-5">
+            <ng-select placeholder="Select Filter" bindLabel="label" bindValue="value" [items]="filterDropdownList"
+                [(ngModel)]="formData.groupBy" name="groupByDD">
+            </ng-select>
+        </div>
+        <div class="col-1 pl-0">
+            <i class="expand_icon fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="list-div">
+        <ng-container *ngIf="menuType === 'voyages'">
+            <ng-container *ngFor="let item of itemList; let i=index;">
+                <div class='pointer my-1 mx-3 border-bottom-1' (click)="onCardClick('voyages', item.SHIP_ID)" [ngClass]="{'active': activeCard === item.SHIP_ID}">
+                    <div class='card-body px-0 py-2'>
+                        <h5 class='card-title my-2'>
+                            <div class='row m-0'>
+                                <div class='col-3 p-0'><img src='assets/images/flag-mexico.svg'
+                                        class='rounded-circle flag-img' /><label
+                                        class='pt-1 pl-1'>{{item.ORIGINATION}}</label></div>
+                                <div class='col-6'><input type='range' min='1' max='100'
+                                        [value]="item.DISTANCE_COVERED_PERCENT" class='slider' [attr.name]="'range' + i"
+                                        [ngStyle]="{'background': 'linear-gradient(to right, #17AAD8 0%, #17AAD8 '+item.DISTANCE_COVERED_PERCENT+'%, #707070 '+item.DISTANCE_COVERED_PERCENT+'%, #707070 100%)'}"
+                                        disabled></div>
+                                <div class='col-3 p-0 right-align'><label
+                                        class='pt-1 pr-1'>{{item.DESTINATION}}</label><img
+                                        class='rounded-circle flag-img' src='assets/images/flag-usa.svg' /></div>
+                            </div>
+                        </h5>
+                        <div class='row'>
+                            <div class='col-6 op-7'><i class='fa fa-arrow-up pr-1'></i>{{item.START_DATE}}</div>
+                            <div class='col-6 op-7 row-text'><i class='fa fa-arrow-down pr-1'></i>{{item.END_DATE}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-6 op-7'><i class='fa fa-ship pr-1'></i>{{item.SHIPNAME}}</div>
+                            <div class='col-6 op-7 row-text'><i class='fa fa-arrows-h pr-1'></i>{{item.REMAINING_DISTANCE}} nm to
+                                reach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="menuType === 'vessels'">
+            <div class='d-flex border-bottom mt-3' *ngFor="let data of dataList">
+                <img src='assets/images/towboat.jpg' height="72px" width="72px" style="border-radius: 10px;"
+                    class="ml-2" />
+                <div class="vessel-list col-9 pl-3">
+                    <label class="d-block text-tile">Capt Al Devall</label>
+                    <label class="d-block text-assign"><span><i class="fa fa-map-marker mr-2"
+                                aria-hidden="true"></i></span>Minnesota</label>
+                    <label class="d-block text-assign"><span><i class="fa fa-stop-circle-o mr-2"
+                                aria-hidden="true"></i></span>In Transit/Underway</label>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

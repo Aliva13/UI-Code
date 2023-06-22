@@ -1,0 +1,113 @@
+{
+    "data": [
+        {
+            "LAT": "39.12592",
+            "LON": "-125.4975983",
+            "SHIPNAME": "Jaime Devall",
+            "STATUS": "In Transit/Underway",
+            "COURSE": "320",
+            "location": "Minnesota",
+            "SHIP_ID": "1"
+        },
+        {
+            "LAT": "28.28",
+            "LON": "-84.72",
+            "SHIPNAME": "Capt Hymen Devall",
+            "STATUS": "Stopped",
+            "COURSE": "120",
+            "location": "Minnesota",
+            "SHIP_ID": "2"
+        },
+        {
+            "LAT": "45",
+            "LON": "-86",
+            "SHIPNAME": "Anna Francis",
+            "STATUS": "On Standby/Idle",
+            "COURSE": "100",
+            "location": "Minnesota",
+            "SHIP_ID": "3"
+        },
+        {
+            "LAT": "27",
+            "LON": "-128",
+            "SHIPNAME": "Aiden Devall",
+            "STATUS": "On Standby/Idle",
+            "COURSE": "320",
+            "location": "Minnesota",
+            "SHIP_ID": "3"
+        },
+        {
+            "LAT": "33.12592",
+            "LON": "-126.4975983",
+            "SHIPNAME": "Callie Devall",
+            "STATUS": "At Port/Docked",
+            "COURSE": "150",
+            "location": "Minnesota",
+            "SHIP_ID": "4"
+        },
+        {
+            "LAT": "42.679",
+            "LON": "-86.976",
+            "SHIPNAME": "Cooper Devall",
+            "STATUS": "Under Charter",
+            "COURSE": "130",
+            "location": "Minnesota",
+            "SHIP_ID": "5"
+        },
+        {
+            "LAT": "17",
+            "LON": "-86",
+            "SHIPNAME": "Capt Drew",
+            "STATUS": "At Port/Docked",
+            "COURSE": "240",
+            "location": "Minnesota",
+            "SHIP_ID": "6"
+        },
+        {
+            "LAT": "33.67",
+            "LON": "-74.67",
+            "SHIPNAME": "Drew Devall",
+            "STATUS": "Awaiting Orders",
+            "COURSE": "30",
+            "location": "Minnesota",
+            "SHIP_ID": "7"
+        },
+        {
+            "LAT": "22.12592",
+            "LON": "-114.4975983",
+            "SHIPNAME": "Eula B Devall",
+            "STATUS": "Awaiting Orders",
+            "COURSE": "40",
+            "location": "Minnesota",
+            "SHIP_ID": "8"
+        },
+        {
+            "LAT": "21.125",
+            "LON": "-96.124",
+            "SHIPNAME": "Capt Hymen",
+            "STATUS": "In Drydock",
+            "COURSE": "20",
+            "location": "Minnesota",
+            "SHIP_ID": "9"
+        },
+        {
+            "LAT": "27.125",
+            "LON": "-123.123",
+            "SHIPNAME": "Allie Brooke Devall",
+            "STATUS": "In Inspection",
+            "COURSE": "200",
+            "location": "Minnesota",
+            "SHIP_ID": "10"
+        },
+        {
+            "LAT": "48",
+            "LON": "-128",
+            "SHIPNAME": "Capt Earl Devall",
+            "STATUS": "Under Repair/Maintenance",
+            "COURSE": "340",
+            "location": "Minnesota",
+            "SHIP_ID": "11"
+        }
+    ],
+    "status": "OK"
+}
