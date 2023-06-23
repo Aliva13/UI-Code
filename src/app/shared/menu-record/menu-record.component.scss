@@ -10,3 +10,43 @@
         font-size: 1.2rem;
     }
   }
+.list-item:not(:last-child){
+    border-bottom: 1px solid #7070703C;
+}
+.list-item{
+    padding: 0.6rem;
+}
+.menu-record-div .menu-record1{
+    height: 62vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 14px;
+        height: 6px;
+    }
+    .active {
+        background: #d3d3d3 0% 0% no-repeat padding-box;
+        border-radius: 10px;
+        padding: 0px 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #7070704d;
+        background-clip: padding-box;
+        border-radius: 9999px;
+        border: 4px solid rgba(0, 0, 0, 0);
+    }
+}
+.img-record{
+    height: 21vh;
+}
+.color-yellow{
+    color: #FF832B;
+}
+.row1{
+    width: 200vh;
+}
+.p{
+    margin-top: -22px;
+    margin-left: 18px;
+}
+
+

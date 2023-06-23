@@ -13,6 +13,7 @@ export class SidebarNavComponent {
   public menuCollapse: boolean = false;
   public showMenuInfo: boolean = false;
   public showMenuRecord: boolean = false;
+  public recordKey: any;
   constructor(private http: HttpClient, public _router: Router) { };
 
   ngOnInit() {
@@ -78,6 +79,7 @@ export class SidebarNavComponent {
   onCardClick(id: string) {
     try {
       this.showMenuInfo = true;
+      this.menuCollapse = true;
     } catch (error) {
       console.log(error)
     }
@@ -89,6 +91,9 @@ export class SidebarNavComponent {
       this.showMenuRecord = false;
     } else if (event.type === 'showMenuRecord') {
       this.showMenuRecord = true;
+      if (event.extraKey) {
+        this.recordKey = event.extraKey;
+      }
     }
   }
 }

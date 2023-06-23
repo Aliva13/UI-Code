@@ -1,3 +1,6 @@
+.menu-list{
+    // background-color:#E8F1F5;
+}
 .border-bottom-1{
     border-bottom: 1px solid #7070703C;
 }
@@ -9,7 +12,7 @@
     padding: 1rem;
 }
 .list-div{
-    height: 75vh;
+    height: 80vh;
     overflow-y: scroll;
     &::-webkit-scrollbar {
         width: 14px;

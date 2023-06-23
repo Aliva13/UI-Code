@@ -127,7 +127,7 @@ export class MapsComponent implements OnInit {
 							const point = map.containerPointToLatLng([x, y])
 							map.setView(point);
 							let content = "<div class='tooltip-div'><div class='card mb-0'><img class='card-img-top' src='assets/images/towboat.jpg' alt='Card image cap'style='height: 21vh;'>";
-							content += "<div class='card-body px-3 py-2'><h5 class='card-title my-2'><div class='row m-0'><div class='col-3 p-0'><img src='assets/images/flag-mexico.svg' class='rounded-circle flag-img' /><label class='pt-1 pl-1 '>" + item.ORIGINATION + "</label></div><div class='col-6'><input style='  background: linear-gradient(to right, #17AAD8 0%, #17AAD8 " + item.DISTANCE_COVERED_PERCENT + "%, #707070 " + item.DISTANCE_COVERED_PERCENT + "%, #707070 100%);' type='range' min='1' max='100' value='" + item.DISTANCE_COVERED_PERCENT + "' class='slider mx-2 ' id='" + i + "' disabled ></div><div class='col-3 p-0 right-align'><label class='line pt-1 pr-1'>" + item.DESTINATION + "</label><img class='rounded-circle flag-img right-flag' src='assets/images/flag-usa.svg'/></div></div></h5>";
+							content += "<div class='card-body px-3 py-2'><h5 class='card-title my-2'><div class='row m-0'><div class='col-3 p-0'><img src='assets/images/flag-mexico.svg' class='rounded-circle flag-img' /><label class='pt-1 pl-1'>" + item.ORIGINATION + "</label></div><div class='col-6'><input style='background: linear-gradient(to right, #17AAD8 0%, #17AAD8 " + item.DISTANCE_COVERED_PERCENT + "%, #707070 " + item.DISTANCE_COVERED_PERCENT + "%, #707070 100%);' type='range' min='1' max='100' value='" + item.DISTANCE_COVERED_PERCENT + "' class='slider mx-2' id='" + i + "' disabled ></div><div class='col-3 p-0 right-align'><label class='pt-1 pr-1'>" + item.DESTINATION + "</label><img class='rounded-circle flag-img' src='assets/images/flag-usa.svg'/></div></div></h5>";
 							content += "<div class='row'><div class='col-6 op-7'><i class='fa fa-arrow-up pr-1'></i>" + item.START_DATE + "</div><div class='col-6 op-7'><i class='fa fa-arrow-down pr-1'></i>" + item.END_DATE + "</div></div>";
 							content += "<div class='row'><div class='col-6 op-7'><i class='fa fa-ship pr-1'></i>" + item.SHIPNAME + "</div><div class='col-6 op-7'><i class='fa fa-arrows-h pr-1'></i>" + item.REMAINING_DISTANCE + " nm to reach</div></div>";
 							content += "</div></div><h6 class='pt-2'>Voyage Information</h6><div class='card mb-0'><div class='card-body px-3 pt-2 pb-0'>"
@@ -136,7 +136,6 @@ export class MapsComponent implements OnInit {
 							content += "<div class='bb-1'><label class='mb-0 op-7'>Latitude / Longitude</label><br><label>" + item.LAT + " / " + item.LON + "</label></div>"
 							content += "<div ><label class='mb-0 op-7'>Speed / Course</label><br><label>" + item.SPEED + " kn / " + item.COURSE + " &deg;</label></div>"
 							content += "</div></div><div class='row m-0 mt-2'><button class='btn btn-primary col-5 mx-2'>Track Route</button><button class='btn btn-primary col-5 mx-2'>More Info..</button></div></div>"
-							console.log(content)
 							var popup = L.tooltip()
 								.setLatLng([lat, lng])
 								.setContent(content)

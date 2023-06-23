@@ -6,7 +6,7 @@
             <div (click)="routeToPage('voyages')" class="each_menu" [ngClass]="{'active': activeMenu === 'voyages'}">
                 <img class="icon_size" src="./assets/svgs/icons/voyages.svg" alt="voyages" />
                 <ng-container *ngIf="!menuCollapse">
-                    Voyages
+                    Voyage
                 </ng-container>
             </div>
             <div (click)="routeToPage('vessels')" class="each_menu" [ngClass]="{'active': activeMenu === 'vessels'}">
@@ -43,7 +43,7 @@
                 <app-list-menu [menuType]="activeMenu"></app-list-menu>
             </ng-container>
             <ng-container *ngIf="activeMenu === 'crew'">
-
+                <app-list-menu [menuType]="activeMenu"></app-list-menu>
             </ng-container>
             <ng-container *ngIf="activeMenu === 'ports'">
 
@@ -70,7 +70,7 @@
         </div>
         <div class="sub_record" *ngIf="showMenuRecord">
             <ng-container *ngIf="activeMenu === 'voyages'">
-                <app-menu-record (menuDataEmitter)="menuDataEmitter($event)"></app-menu-record>
+                <app-menu-record (menuDataEmitter)="menuDataEmitter($event)" [menuContentToshow] = "recordKey"></app-menu-record>
             </ng-container>
             <ng-container *ngIf="activeMenu === 'vessels'">
             </ng-container>

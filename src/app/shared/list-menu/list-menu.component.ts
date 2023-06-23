@@ -16,6 +16,7 @@ export class ListMenuComponent {
   public filterDropdownList = [];
   public grouByDropdownList = [];
   public formData: any = {};
+  public crewName: any = '';
 	@Output() clickCardEmitter = new EventEmitter();
 
   public dataList = [
@@ -52,6 +53,8 @@ export class ListMenuComponent {
             label:"Name in Associate",
             value:"nameinassociate"
           }];
+      } else if (this.menuType === 'crew') {
+        this.title = 'Crew';
       }
     } catch (error) {
       console.log(error);
@@ -79,7 +82,17 @@ export class ListMenuComponent {
       if(type === 'voyages'){
         this.sharedService.setClickedCardId(id);
         this.clickCardEmitter.emit(id);
+      } else if (type === 'crew') {
+        this.clickCardEmitter.emit(this.crewName);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  crewMember(object){
+    try {
+      this.crewName = object.name;
     } catch (error) {
       console.log(error);
     }

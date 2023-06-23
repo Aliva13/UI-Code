@@ -64,10 +64,82 @@ export class MenuDataComponent {
       }
       ]
     },
-    { header: "Voyage Information" },
-    { header: "Cargo details" },
-    { header: "Crew" },
-    { header: "Technical details" }
+    {
+      header: 'Events Timeline',
+      type: "eventsTimeline",
+      data: [{
+        date: "Jun 12, 2023",
+        eventData: [{
+          time: "11:04",
+          heading:"Departed",
+          headingCls:"info",
+          content: "Altamira, Mexico"
+        }, {
+          time: "12:36",
+          content: "Cleared Altamira port and set course towards Houston."
+        },{
+          time: "16:04",
+          content: "Crossed the border into international waters"
+        },{
+          time: "20:54",
+          heading:"Delay",
+          headingCls:"warning",
+          content: "Minor delay due to rough seas"
+        },{
+          time: "23:17",
+          heading:"Layover",
+          headingCls:"primary",
+          content: "Reached Brownsville, Texas"
+        }]
+      },
+      {
+        date: "Jun 12, 2023",
+        eventData: [{
+          time: "02:00",
+          heading:"Departed",
+          headingCls:"info",
+          content: "Brownsville, resuming the journey."
+        }, {
+          time: "06:30",
+          content: "Crossed into Texas waters"
+        },{
+          time: "09:04",
+          content: "Entered Gulf Intracoastal Waterway."
+        },{
+          time: "12:54",
+          heading:"Layover",
+          headingCls:"primary",
+          content: "Arrived in Galveston, Texas."
+        },{
+          time: "15:07",
+          heading:"Voyage Complete",
+          headingCls:"success",
+          content: "Docked in Houston, Texas."
+        }]
+      }]
+    },
+    {
+      header: "Voyage Information",
+      type: "voyageInfo",
+      data: [
+        { label: "Vessel", value: "Jaime Devall" },
+        { label: "Navigational Status", value: "Underway" },
+        { label: "Speed", value: "30kn" },
+        { label: "Course", value: "34 &deg" },
+      ]
+    },
+    {
+      header: "Cargo details",
+      type: "activityLog"
+    },
+    {
+      header: "Crew",
+      type: "activityLog"
+    },
+    {
+      header: "Technical details",
+      type: "activityLog"
+    }
   ];
   @Output() menuDataEmitter = new EventEmitter();
 
@@ -76,8 +148,10 @@ export class MenuDataComponent {
   }
   actionBtnClick(type: string) {
     try {
-      if (type === 'Enter Towing Vessel Log') {
-        this.menuDataEmitter.emit({ type: "showMenuRecord" });
+      if (type === 'Enter Towing Vessel Log' || type === 'Open Towing Vessel Record') {
+        this.menuDataEmitter.emit({ type: "showMenuRecord", extraKey: 'vessel record' });
+      } else if (type === 'Complete Change of Watch' || type === 'Open Change of Watch') {
+        this.menuDataEmitter.emit({ type: "showMenuRecord", extraKey: 'change of watch' });
       }
     } catch (error) {
       console.log(error);

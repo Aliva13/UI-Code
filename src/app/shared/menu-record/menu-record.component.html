@@ -1,10 +1,52 @@
-<div class="menu-record">
+<div class="menu-record" *ngIf="menuContentToshow === 'vessel record'">
     <div class="row">
-        <div class="col-6">
+        <div class="col-8">
             <h5 class="list-title">Towing Vessel Record</h5>
         </div>
-        <div class="col-6 menu-logo pr-4">
+        <div class="col-4 menu-logo pr-4">
             <i class="fa fa-times list-title pointer" aria-hidden="true" (click)="closeRecord()"></i>
         </div>
+    </div>
+    <div class="menu-record-div">
+        <ng-container *ngFor="let data of recordData.dataList;let id=index;">
+            <div class="list-item">
+                <h6>{{data?.title}}</h6>
+                <p>{{data?.content}}</p>
+                <img *ngIf="data.image" [src]="data.imageSrc" class="img-record rounded" />
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="menu-record-form list-item">
+        <p class="mb-2" *ngIf="recordData.warning">
+            <i class="fa fa-exclamation-circle color-yellow pr-2" aria-hidden="true"></i>{{recordData.warningMsg}}
+        </p>
+        <ng-container *ngIf="recordData.formRequired">
+            <textarea [placeholder]="'Enter Vessel’s status in brief as of '+ timenow" class="form-control"
+                rows="4"></textarea>
+            <div class='row m-0 mt-2'>
+                <button class='btn btn-primary col-5 mx-2'>Submit</button>
+                <button class='btn btn-secondary col-5 mx-2'>Clear</button>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="menu-recordone" *ngIf="menuContentToshow === 'change of watch'">
+    <div class="row">
+        <div class="col-8">
+            <h5 class="list-title">Change of Watch Discussions</h5>
+        </div>
+        <div class="col-4 menu-logo pr-4">
+            <i class="fa fa-times list-title pointer" aria-hidden="true" (click)="closeRecord()"></i>
+        </div>
+    </div>
+    <div class="menu-record1" *ngFor="let data of watchData.dataList;let id = index;">
+        <div class="list-item">
+            <input type="checkbox" id="watch" name="vehicle1" value="checkbox">
+            <p> {{data?.content}}</p>
+        </div>
+    </div>
+    <div class='row1 m-0 mt-2'>
+        <button class='btn btn-primary col-5 mx-2'>Submit</button>
     </div>
 </div>

@@ -20,7 +20,7 @@
     padding: 0.6rem;
 }
 .accordion-div{
-    height: 80vh;
+    height: 87vh;
     overflow-y: scroll;
     &::-webkit-scrollbar {
         width: 14px;
@@ -38,3 +38,84 @@
         border: 4px solid rgba(0, 0, 0, 0);
     }
 }
+.card-list:not(:last-child){
+    border-bottom: 1px solid #7070703C;
+}
+.op-7{
+    opacity: 0.7;
+}
+.item{
+    position: relative;
+}
+.item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 1rem;
+  height: 90%;
+  width: 2px;
+  background: #7070704d;
+  top: 15px;
+}
+
+.item > span {
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 100%;
+    top: 0;
+}
+
+.item div {
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+.item p {
+    margin-top: 15px;
+    padding: .5rem 0 0 3rem;
+}
+.primary{
+    color: #005CB7;
+}
+.info{
+    color: #32363A;
+}
+.success{
+    color: #3C866F;
+}
+.warning{
+    color: #C95A31;
+}
+ 
+ .hr-lines {
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .hr-lines:before,
+  .hr-lines:after {
+    border: 1px solid #7070704d;
+    content: "";
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+  
+  .hr-lines:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  
+  .hr-lines:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+  .pad-6{
+    padding: 0.6rem;
+  }
+  .color-yellow{
+      color: #FF832B;
+  }
