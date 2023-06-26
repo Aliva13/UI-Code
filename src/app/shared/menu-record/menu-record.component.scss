@@ -40,6 +40,12 @@
 .color-yellow {
   color: #ff832b;
 }
+.status{
+  padding-left: 40px;
+  span{
+    font-weight: 10px;
+  }
+}
 .row1 {
   width: 126vh;
   padding-top: 1vh;
@@ -52,19 +58,21 @@
 .menu-recordone{
   overflow-x:hidden;
   height: 100vh;
-    &::-webkit-scrollbar {
-      width: 14px;
-      height: 4px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: #7070704d;
-      background-clip: padding-box;
-      border-radius: 10000px;
-      border: 4px solid rgba(0, 0, 0, 0);
-    }
   }
 .menu-record1{
-  height: 80vh;
+  height: 75vh;
+  overflow-y: auto;
+  overflow-x:hidden;
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #7070704d;
+    background-clip: padding-box;
+    border-radius: 10000px;
+    border: 4px solid rgba(0, 0, 0, 0);
+  }
 }
 .rounded-checkbox {
   width: 19px;

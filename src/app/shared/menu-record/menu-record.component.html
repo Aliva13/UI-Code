@@ -34,11 +34,15 @@
 <div class="menu-recordone" *ngIf="menuContentToshow === 'change of watch'">
     <div class="row">
         <div class="col-8">
-            <h5 class="list-title">Change of Watch Discussions</h5>
+            <h5 class="list-title pl-4 ml-3">Change of Watch Discussions</h5>
         </div>
         <div class="col-4 menu-logo pr-4">
             <i class="fa fa-times list-title pointer" aria-hidden="true" (click)="closeRecord()"></i>
         </div>
+    </div>
+    <div class="status"  >
+        <h6>Current Status:<span>Vessel Not Underway</span>
+        </h6>
     </div>
     <div class="menu-record1">
         <ng-container *ngFor="let data of watchData.dataList; let id = index;">
