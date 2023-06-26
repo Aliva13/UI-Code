@@ -40,26 +40,26 @@
             <i class="fa fa-times list-title pointer" aria-hidden="true" (click)="closeRecord()"></i>
         </div>
     </div>
-    <div class="status"  >
+    <div class="status">
         <h6>Current Status:<span>Vessel Not Underway</span>
         </h6>
     </div>
     <div class="menu-record1">
         <ng-container *ngFor="let data of watchData.dataList; let id = index;">
-          <div class="list-item1">
-            <div class="row">
-              <div class="col-md-1 pt-1 pl-5">
-                <input type="checkbox" class="rounded-checkbox" id="checkbox" />
-                <label for="checkbox"></label>
-              </div>
-              <div class="col-md-10 pt-1 pl-4">
-                <p>{{ data?.content }}</p>
-              </div>
-              <hr class="bg-black" id="hrline" *ngIf="id !== watchData.dataList.length - 1" />
+            <div class="list-item1">
+                <div class="row">
+                    <div class="col-md-1 pt-1 pl-5">
+                        <input type="checkbox" class="rounded-checkbox" id="checkbox" />
+                        <label for="checkbox"></label>
+                    </div>
+                    <div class="col-md-10 pt-1 pl-4">
+                        <p>{{ data?.content }}</p>
+                    </div>
+                    <hr class="bg-black" id="hrline" *ngIf="id !== watchData.dataList.length - 1" />
+                </div>
             </div>
-          </div>
         </ng-container>
-      </div>      
+    </div>
     <div class='row1 pl-5 mt-2'>
         <button class='watch btn btn-primary col-5 mx-2'>Submit</button>
     </div>
