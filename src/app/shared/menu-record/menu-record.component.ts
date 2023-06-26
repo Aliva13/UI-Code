@@ -7,8 +7,9 @@ import { Component, Output, EventEmitter, OnInit, Input, SimpleChanges } from '@
 })
 export class MenuRecordComponent implements OnInit {
   @Output() menuDataEmitter = new EventEmitter();
-  @Input() type: any = '' ;
-  @Input() menuContentToshow: any = '' ;
+  @Input() type: any = '';
+  @Input() menuContentToshow: any = '';
+
   public timenow = '';
   public recordData = {
     dataList: [
@@ -26,29 +27,35 @@ export class MenuRecordComponent implements OnInit {
       }
     ],
     warning: true,
-    warningMsg:"The data entry was due at 13 Jun, 07:30 and is now overdue.",
+    warningMsg: "The data entry was due at 13 Jun, 07:30 and is now overdue.",
     formRequired: true
   };
   public watchData = {
     dataList: [
       {
-        content: 'Performance of the vessel, towing gear, navigation, and critical equipment.'
-      },{
-        content: 'Location & direction of the vessel, including traffic in the area and whether the tow is overtaking or being overtaken.'
-      },{
+        content: 'Status of current operations'
+      },
+      {
+        content: 'State of the transfer, if in progress, including performance of barge equipment and tankerman approaching work hour limits.'
+      }, {
         content: 'Any Incidents, near misses or injuries since last watch.'
-      },{
+      },
+      {
+        content: 'Information vital to the scheduler.'
+      }, {
         content: 'Work Instructions or duties in progress by the crew, including open Permits to Work or hazardous situations onboard.'
-      },{
-        content: 'O Conditions/hazards critical areas likely to be encountered during the watch.'
-      },{
+      }, {
+        content: 'Conditions/hazards critical areas likely to be encountered during the watch.'
+      }, {
         content: 'Any new or changed orders between vessel and Logistics Department.'
-      },{
+      }, {
         content: 'Any changes in MARSEC level.'
-      },{
+      }, {
         content: 'Any changes to Master’s Standing Orders.'
-      },{
+      }, {
         content: 'Any distress calls sent or received during watch.'
+      }, {
+        content: 'Any emails,safety flashes or general communications from the office.'
       }
     ]
   };
@@ -60,8 +67,8 @@ export class MenuRecordComponent implements OnInit {
     this.timenow = d.getDate() + " " + monthNames[d.getMonth()] + " " + d.getFullYear() + " , " + d.getHours() + ":" + d.getMinutes()
   }
   ngOnChanges(changes: SimpleChanges) {
-    if(changes) {
-      if(this.menuContentToshow) {
+    if (changes) {
+      if (this.menuContentToshow) {
         this.menuContentToshow = this.menuContentToshow;
       }
     }
@@ -69,4 +76,5 @@ export class MenuRecordComponent implements OnInit {
   closeRecord() {
     this.menuDataEmitter.emit({ type: "closeMenuRecord" });
   }
+
 }
