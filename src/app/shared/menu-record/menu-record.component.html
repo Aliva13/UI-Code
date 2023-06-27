@@ -46,18 +46,11 @@
     </div>
     <div class="menu-record1">
         <ng-container *ngFor="let data of watchData.dataList; let id = index;">
-            <div class="list-item1">
-                <div class="row">
-                    <div class="col-md-1 pt-1 pl-5">
-                        <input type="checkbox" class="rounded-checkbox" id="checkbox" />
-                        <label for="checkbox"></label>
-                    </div>
-                    <div class="col-md-10 pt-1 pl-4">
-                        <p>{{ data?.content }}</p>
-                    </div>
-                    <hr class="bg-black" id="hrline" *ngIf="id !== watchData.dataList.length - 1" />
-                </div>
-            </div>
+            <label class="container">{{ data?.content }}
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <div class="border" *ngIf="id !== watchData.dataList.length - 1"></div>
         </ng-container>
     </div>
     <div class='row1 pl-5 mt-2'>

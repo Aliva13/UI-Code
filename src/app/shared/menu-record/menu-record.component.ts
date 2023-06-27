@@ -43,7 +43,7 @@ export class MenuRecordComponent implements OnInit {
       {
         content: 'Information vital to the scheduler.'
       }, {
-        content: 'Work Instructions or duties in progress by the crew, including open Permits to Work or hazardous situations onboard.'
+        content: 'Work Instructions or duties in progress by the crew,including open permits to Work or hazardous situations onboard.'
       }, {
         content: 'Conditions/hazards critical areas likely to be encountered during the watch.'
       }, {
